@@ -2,9 +2,11 @@
 
 A modern, interactive tool for analyzing database transaction serializability using precedence graphs.
 
-![ConflictCheck](https://img.shields.io/badge/ConflictCheck-Database%20Serializability-blue)
-![React](https://img.shields.io/badge/React-18.2-blue)
-![Vite](https://img.shields.io/badge/Vite-5.2-blue)
+[![ConflictCheck](https://img.shields.io/badge/ConflictCheck-Database%20Serializability-blue)]
+[![React](https://img.shields.io/badge/React-18.2-blue)]
+[![Vite](https://img.shields.io/badge/Vite-5.2-blue)]
+
+**Live Demo**: [https://conflict-check-pearl.vercel.app/](https://conflict-check-pearl.vercel.app/)
 
 ## Overview
 
