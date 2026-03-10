@@ -1,0 +1,421 @@
+:root {
+  /* Obsidian Dark Mode Palette - Refined */
+  --bg-primary: #020617;
+  /* Slate 950 */
+  --bg-secondary: #0F172A;
+  /* Slate 900 */
+  --bg-accent: #1E293B;
+  /* Slate 800 */
+
+  --text-primary: #F8FAFC;
+  /* Slate 50 */
+  --text-secondary: #CBD5E1;
+  /* Slate 300 */
+  --text-muted: #94A3B8;
+  /* Slate 400 - Improved contrast from 500 */
+
+  --primary: #3B82F6;
+  /* Blue 500 */
+  --primary-glow: rgba(59, 130, 246, 0.4);
+  --success: #10B981;
+  /* Emerald 500 */
+  --danger: #F43F5E;
+  /* Rose 500 */
+  --warning: #F59E0B;
+  /* Amber 500 */
+
+  /* Glassmorphism */
+  --glass-bg: rgba(15, 23, 42, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(20px);
+
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 12px 24px;
+}
+
+.btn-primary:hover {
+  background: #2563EB;
+  box-shadow: 0 0 30px var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: white;
+  background-opacity: 0.05;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid var(--glass-border);
+  padding: 10px 20px;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 24px;
+}
+
+/* Tailwind-ish utility for quick alignment in JS */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+/* Responsive flex row for large screens */
+@media (min-width: 1024px) {
+  .lg\:flex-row {
+    flex-direction: row !important;
+  }
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+.rounded-2xl {
+  border-radius: 1.5rem;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+/* Equal width columns */
+@media (min-width: 1024px) {
+  .lg\:w-1\/2 {
+    width: 50% !important;
+  }
+
+  .lg\:min-w-0 {
+    min-width: 0 !important;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .min-h-screen {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .glass-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+
+  .header-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-controls>div {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Responsive padding and gap */
+@media (min-width: 768px) {
+  .md\:p-4 {
+    padding: 1rem;
+  }
+
+  .md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
+  }
+}
+
+/* Form inputs */
+input,
+select {
+  color: var(--text-primary);
+  background: transparent;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Schedule Table Styles */
+.schedule-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.schedule-table th {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.schedule-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 48px;
+}
+
+.schedule-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.schedule-table select {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.schedule-table select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-color: var(--primary);
+}
+
+/* Add more as I go or just use raw CSS in App.jsx style tags for complexity */
