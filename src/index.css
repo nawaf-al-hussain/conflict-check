@@ -403,13 +403,19 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .schedule-table select {
   appearance: none;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   padding: 8px 12px;
   font-size: 14px;
   min-height: 44px;
   cursor: pointer;
+  color: var(--text-primary);
+}
+
+.schedule-table select option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .schedule-table select:focus {
